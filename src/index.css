@@ -14,3 +14,186 @@ html, body, #root {
   width: 100%;
   overflow: hidden;
 }
+
+
+/* Map pins */
+.map-pin {
+  cursor: pointer;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+.map-pin svg {
+  transition: transform 0.2s ease;
+}
+.map-pin:hover svg {
+  transform: scale(1.18) translateY(-2px);
+}
+
+/* Bar info card */
+.bar-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.bar-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bar-card-badge {
+  background: #E91E63;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bar-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.bar-card-vibe {
+  font-size: 13px;
+  color: #E91E63;
+  font-weight: 500;
+  margin: 2px 0 0;
+  letter-spacing: 0.02em;
+}
+
+.bar-card-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+.bar-card-close:hover {
+  color: #333;
+}
+
+.bar-card-description {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #444;
+  margin: 0 0 16px;
+}
+
+.bar-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.bar-card-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #555;
+}
+
+.bar-card-label {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+/* Tab bar */
+.tab-bar {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 20;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.tab-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 20px;
+  color: #999;
+  transition: color 0.2s ease;
+}
+
+.tab-bar-item span {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.tab-bar-item.active {
+  color: #E91E63;
+}
+
+.tab-bar-item:not(.active):hover {
+  color: #666;
+}
+
+/* Panel views */
+.panel-view {
+  position: absolute;
+  inset: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+.panel-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.panel-subtitle {
+  font-size: 15px;
+  color: #999;
+  margin: 8px 0 0;
+}
