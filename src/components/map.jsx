@@ -6,11 +6,92 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 
 const bars = [
   {
+    id: 'candy-darling',
+    name: 'Candy Darling',
+    coords: [2.1630, 41.3851],
+    address: 'Gran Via de les Corts Catalanes, 586',
+    description: 'Named after Andy Warhol\'s transgender muse. The trendiest queer space in the city right now — cocktails, drag, burlesque, circus acts, and a late-night wild room disco.',
+    vibe: 'Queer bar & show venue',
+    website: null,
+  },
+  {
+    id: 'la-chapelle',
+    name: 'La Chapelle',
+    coords: [2.1591, 41.3867],
+    address: 'Carrer de Muntaner, 67',
+    description: 'A Gaixample institution with a church-themed aesthetic. Famous for its Negronis, heavily poured mojitos, and the best people-watching terrace on the strip.',
+    vibe: 'Cocktail bar',
+    website: null,
+  },
+  {
+    id: 'punto-bcn',
+    name: 'Punto BCN',
+    coords: [2.1592, 41.3867],
+    address: 'Carrer de Muntaner, 63',
+    description: 'One of the oldest gay bars in Barcelona — unpretentious, reliably packed from early evening, with a pool table and mezzanine. The classic pre-party starting point.',
+    vibe: 'Classic gay bar',
+    website: 'grupoarena.com',
+  },
+  {
+    id: 'moeem',
+    name: 'Moeem Barcelona',
+    coords: [2.1626, 41.3841],
+    address: 'Carrer de Muntaner, 11',
+    description: 'The most universally recommended bar by visitors and locals alike. Pop DJ sets, affordable drinks, no cover, dancer shows on Thursdays, and Sunday bingo.',
+    vibe: 'Gay bar',
+    website: 'moeembarcelona.com',
+  },
+  {
+    id: 'gingin',
+    name: 'GinGin Gay Queer Bar',
+    coords: [2.1606, 41.3876],
+    address: 'Carrer d\'Aribau',
+    description: 'A newer addition to the Gaixample with a relaxed queer energy. Strong cocktails, a friendly crowd, and a no-attitude door policy.',
+    vibe: 'Queer cocktail bar',
+    website: 'gingingaybar.com',
+  },
+  {
+    id: 'priscilla-cafe',
+    name: 'Priscilla Cafè',
+    coords: [2.1610, 41.3877],
+    address: 'Carrer del Consell de Cent',
+    description: 'A relaxed all-day café-bar that transforms into a lively queer hangout as the night goes on. One of the few places in the Gaixample open from morning.',
+    vibe: 'Café bar',
+    website: 'priscillacafe.com',
+  },
+  {
+    id: 'la-carra',
+    name: 'La Carrà',
+    coords: [2.1610, 41.3856],
+    address: 'Carrer de Muntaner, 34',
+    description: 'A shrine to Italian pop icon Raffaella Carrà — 70s memorabilia, mirror balls, and a retro singalong playlist. Serves pizza, tapas, and cocktails.',
+    vibe: 'Retro gay bar',
+    website: 'lacarrabcn.com',
+  },
+  {
+    id: 'strass',
+    name: 'Strass Barcelona',
+    coords: [2.1589, 41.3838],
+    address: 'Carrer de Villarroel, 68',
+    description: 'A proper drag bar with nightly shows at 11:30pm featuring both established queens and newcomers. Famous Sunday bingo nights with €300 prize pots.',
+    vibe: 'Drag bar',
+    website: null,
+  },
+  {
+    id: 'la-federica',
+    name: 'La Federica',
+    coords: [2.1668, 41.3745],
+    address: 'Carrer de Salvà, 3',
+    description: 'A chic, intimate gay bar in Poble-sec, away from the tourist Gaixample bubble. Pastel 70s decor, fancy cocktails, and drag performers most nights.',
+    vibe: 'Queer cocktail bar',
+    website: null,
+  },
+  {
     id: 'safari-disco-club',
     name: 'Safari Disco Club',
     coords: [2.1449, 41.3783],
     address: 'Carrer de Tarragona, 141',
-    description: 'A vibrant queer nightclub with a sexual anti-harassment policy and a fierce, inclusive dancefloor. One of Barcelona\'s most progressive party spaces.',
+    description: 'A fierce, inclusive queer nightclub with a strict anti-harassment policy and one of Barcelona\'s best dancefloors. The most progressive party space in the city.',
     vibe: 'Queer nightclub',
     website: 'safaridiscoclub.com',
   },
@@ -18,9 +99,9 @@ const bars = [
     id: 'believe-club',
     name: 'Believe Club',
     coords: [2.1626, 41.3894],
-    address: 'Carrer de València, 156',
-    description: 'A newer addition to the Gaixample scene with a sleek interior and big-room energy. Multiple floors, themed nights, and open almost every day of the week.',
-    vibe: 'Modern nightclub',
+    address: 'Carrer de Balmes, 56',
+    description: 'The most famous drag queen club in the Gaixample. Nightly drag performances, live concerts, karaoke, and pole dancers — open almost every day of the week.',
+    vibe: 'Drag nightclub',
     website: 'thebelieve.club',
   },
   {
@@ -28,48 +109,86 @@ const bars = [
     name: 'Bacon Bear Bar',
     coords: [2.1591, 41.3853],
     address: 'Carrer de Casanova, 64',
-    description: 'The bear bar of the Gaixample — friendly, hairy, and unpretentious. Strong pours, a loyal crowd, and one of the best terraces in the neighborhood.',
+    description: 'The bear bar of the Gaixample — friendly, hairy, and unpretentious. Strong pours, happy hour until 10pm, and one of the best terraces in the neighborhood.',
     vibe: 'Bear bar',
     website: 'baconbearbar.com',
   },
+  {
+    id: 'la-sastreria',
+    name: 'La Sastrería',
+    coords: [2.1590, 41.3862],
+    address: 'Carrer del Consell de Cent, 245',
+    description: 'A trendy local favorite known for its drag brunches — one of the most Instagram-worthy LGBTQ daytime experiences in the city. Lively drag shows weekly.',
+    vibe: 'Drag brunch bar',
+    website: null,
+  },
 ];
 
-const TabBar = ({ activeTab, onTabChange }) => (
-  <div className="tab-bar">
-    <button
-      className={`tab-bar-item ${activeTab === 'map' ? 'active' : ''}`}
-      onClick={() => onTabChange('map')}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+const tabs = [
+  {
+    id: 'map',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
         <line x1="8" y1="2" x2="8" y2="18" />
         <line x1="16" y1="6" x2="16" y2="22" />
       </svg>
-      <span>Map</span>
-    </button>
-    <button
-      className={`tab-bar-item ${activeTab === 'events' ? 'active' : ''}`}
-      onClick={() => onTabChange('events')}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    ),
+  },
+  {
+    id: 'events',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
         <line x1="16" y1="2" x2="16" y2="6" />
         <line x1="8" y1="2" x2="8" y2="6" />
         <line x1="3" y1="10" x2="21" y2="10" />
         <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
       </svg>
-      <span>Events</span>
-    </button>
-    <button
-      className={`tab-bar-item ${activeTab === 'profile' ? 'active' : ''}`}
-      onClick={() => onTabChange('profile')}
-    >
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    ),
+  },
+  {
+    id: 'profile',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
         <circle cx="12" cy="7" r="4" />
       </svg>
-      <span>Profile</span>
-    </button>
+    ),
+  },
+];
+
+const TabBar = ({ activeTab, onTabChange }) => (
+  <div className="tab-bar">
+    {tabs.map((tab) => {
+      const isActive = activeTab === tab.id;
+      return (
+        <button
+          key={tab.id}
+          className="tab-bar-item"
+          onClick={() => onTabChange(tab.id)}
+        >
+          {isActive && (
+            <motion.div
+              layoutId="tab-blob"
+              className="tab-blob"
+              transition={{ type: 'spring', stiffness: 420, damping: 22 }}
+            />
+          )}
+          <motion.div
+            animate={isActive ? {
+              y: [0, -8, 2, 0],
+              scaleX: [1, 0.8, 1.1, 1],
+              scaleY: [1, 1.2, 0.9, 1],
+            } : {}}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            style={{ color: isActive ? '#1a1a1a' : '#999', position: 'relative', zIndex: 1 }}
+          >
+            {tab.icon}
+          </motion.div>
+        </button>
+      );
+    })}
   </div>
 );
 
@@ -105,8 +224,8 @@ const Map = () => {
       map.current = new maplibregl.Map({
         container: mapContainer.current,
         style: style,
-        center: [2.1555, 41.3845],
-        zoom: 14,
+        center: [2.1580, 41.3835],
+        zoom: 13.5,
         attributionControl: false
       });
 
@@ -141,9 +260,9 @@ const Map = () => {
       el.className = 'map-pin';
       el.innerHTML = `
         <svg width="36" height="44" viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 0C8.059 0 0 8.059 0 18c0 12.627 16.5 25.125 17.227 25.707a1.286 1.286 0 001.546 0C19.5 43.125 36 30.627 36 18 36 8.059 27.941 0 18 0z" fill="#E91E63"/>
+          <path d="M18 0C8.059 0 0 8.059 0 18c0 12.627 16.5 25.125 17.227 25.707a1.286 1.286 0 001.546 0C19.5 43.125 36 30.627 36 18 36 8.059 27.941 0 18 0z" fill="#1a1a1a"/>
           <circle cx="18" cy="18" r="8" fill="white"/>
-          <circle cx="18" cy="18" r="4" fill="#E91E63"/>
+          <circle cx="18" cy="18" r="4" fill="#1a1a1a"/>
         </svg>
       `;
 
