@@ -14,6 +14,7 @@
     "@tailwindcss/postcss": "^4.1.16",
     "@tailwindcss/vite": "^4.1.16",
     "autoprefixer": "^10.4.21",
+    "emoji-datasource-apple": "^16.0.0",
     "maplibre-gl": "^5.9.0",
     "motion": "^12.38.0",
     "pmtiles": "^4.3.0",

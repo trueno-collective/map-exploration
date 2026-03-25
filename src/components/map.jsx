@@ -3,6 +3,8 @@ import maplibregl from 'maplibre-gl';
 import { layers, namedFlavor } from '@protomaps/basemaps';
 import { motion, AnimatePresence } from 'motion/react';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import dancerEmoji from 'emoji-datasource-apple/img/apple/64/1f483.png';
+import beerEmoji from 'emoji-datasource-apple/img/apple/64/1f37b.png';
 
 const bars = [
   {
@@ -10,7 +12,8 @@ const bars = [
     name: 'Candy Darling',
     coords: [2.1630, 41.3851],
     address: 'Gran Via de les Corts Catalanes, 586',
-    description: 'Named after Andy Warhol\'s transgender muse. The trendiest queer space in the city right now — cocktails, drag, burlesque, circus acts, and a late-night wild room disco.',
+    description: 'Named after Andy Warhol\'s trans muse. The crowd skews younger, gender-diverse, and creative — this is where artists and performers come to be seen. Strict door policy but genuinely welcoming once inside; security takes harassment seriously.',
+    type: 'bar',
     vibe: 'Queer bar & show venue',
     website: null,
   },
@@ -19,7 +22,8 @@ const bars = [
     name: 'La Chapelle',
     coords: [2.1591, 41.3867],
     address: 'Carrer de Muntaner, 67',
-    description: 'A Gaixample institution with a church-themed aesthetic. Famous for its Negronis, heavily poured mojitos, and the best people-watching terrace on the strip.',
+    description: 'A Gaixample institution that draws an older, mixed crowd — locals in their 30s and 40s who\'ve been coming for years. Relaxed energy, no attitude, and a terrace where everyone ends up eventually.',
+    type: 'bar',
     vibe: 'Cocktail bar',
     website: null,
   },
@@ -28,7 +32,8 @@ const bars = [
     name: 'Punto BCN',
     coords: [2.1592, 41.3867],
     address: 'Carrer de Muntaner, 63',
-    description: 'One of the oldest gay bars in Barcelona — unpretentious, reliably packed from early evening, with a pool table and mezzanine. The classic pre-party starting point.',
+    description: 'One of the oldest bars on the strip, with a crowd that\'s been coming since before it was trendy. Mostly men in their 30s and up. No door, no cover, no pretense — a safe and familiar place to start or end the night.',
+    type: 'bar',
     vibe: 'Classic gay bar',
     website: 'grupoarena.com',
   },
@@ -37,7 +42,8 @@ const bars = [
     name: 'Moeem Barcelona',
     coords: [2.1626, 41.3841],
     address: 'Carrer de Muntaner, 11',
-    description: 'The most universally recommended bar by visitors and locals alike. Pop DJ sets, affordable drinks, no cover, dancer shows on Thursdays, and Sunday bingo.',
+    description: 'The most recommended spot by both locals and first-timers visiting the neighborhood. Draws a broad mix — men, women, couples — which keeps the atmosphere grounded and easy. No cover charge, welcoming staff, and the kind of place you can stay all evening without feeling rushed.',
+    type: 'bar',
     vibe: 'Gay bar',
     website: 'moeembarcelona.com',
   },
@@ -46,7 +52,8 @@ const bars = [
     name: 'GinGin Gay Queer Bar',
     coords: [2.1606, 41.3876],
     address: 'Carrer d\'Aribau',
-    description: 'A newer addition to the Gaixample with a relaxed queer energy. Strong cocktails, a friendly crowd, and a no-attitude door policy.',
+    description: 'One of the newer spots in the neighborhood, pulling in a younger, queer-leaning crowd that doesn\'t fit neatly into the older bar categories. Genuinely no-attitude door and a mixed demographic that includes more women and non-binary people than most places nearby.',
+    type: 'bar',
     vibe: 'Queer cocktail bar',
     website: 'gingingaybar.com',
   },
@@ -55,7 +62,8 @@ const bars = [
     name: 'Priscilla Cafè',
     coords: [2.1610, 41.3877],
     address: 'Carrer del Consell de Cent',
-    description: 'A relaxed all-day café-bar that transforms into a lively queer hangout as the night goes on. One of the few places in the Gaixample open from morning.',
+    description: 'One of the few spots open from morning, making it a natural meeting point for the neighborhood regulars. The daytime crowd is a mix of locals working on laptops and people lingering over coffee. Evening gets livelier — inclusive crowd, no pressure.',
+    type: 'bar',
     vibe: 'Café bar',
     website: 'priscillacafe.com',
   },
@@ -64,7 +72,8 @@ const bars = [
     name: 'La Carrà',
     coords: [2.1610, 41.3856],
     address: 'Carrer de Muntaner, 34',
-    description: 'A shrine to Italian pop icon Raffaella Carrà — 70s memorabilia, mirror balls, and a retro singalong playlist. Serves pizza, tapas, and cocktails.',
+    description: 'A shrine to Raffaella Carrà with 70s memorabilia and mirror balls. Draws a loyal crowd of locals who know every word to the playlist. Unpretentious, warm, and the kind of bar where strangers end up talking.',
+    type: 'bar',
     vibe: 'Retro gay bar',
     website: 'lacarrabcn.com',
   },
@@ -73,7 +82,8 @@ const bars = [
     name: 'Strass Barcelona',
     coords: [2.1589, 41.3838],
     address: 'Carrer de Villarroel, 68',
-    description: 'A proper drag bar with nightly shows at 11:30pm featuring both established queens and newcomers. Famous Sunday bingo nights with €300 prize pots.',
+    description: 'A dedicated drag bar where the shows are the main event, not an afterthought. The crowd is mostly local men who come specifically for the performers — regulars who know the queens by name. One of the safer, more community-rooted spots in the area.',
+    type: 'bar',
     vibe: 'Drag bar',
     website: null,
   },
@@ -82,7 +92,8 @@ const bars = [
     name: 'La Federica',
     coords: [2.1668, 41.3745],
     address: 'Carrer de Salvà, 3',
-    description: 'A chic, intimate gay bar in Poble-sec, away from the tourist Gaixample bubble. Pastel 70s decor, fancy cocktails, and drag performers most nights.',
+    description: 'Away from the tourist-heavy Gaixample, this is where the neighborhood locals come. Smaller and more intimate — the kind of crowd that actually talks to each other. Poble-sec has a strong queer resident community and this bar reflects that: relaxed, genuine, and safe.',
+    type: 'bar',
     vibe: 'Queer cocktail bar',
     website: null,
   },
@@ -91,7 +102,8 @@ const bars = [
     name: 'Safari Disco Club',
     coords: [2.1449, 41.3783],
     address: 'Carrer de Tarragona, 141',
-    description: 'A fierce, inclusive queer nightclub with a strict anti-harassment policy and one of Barcelona\'s best dancefloors. The most progressive party space in the city.',
+    description: 'The most explicitly political and community-minded nightclub on this list. Draws an intentionally diverse crowd across gender, age, and background. Strict anti-harassment policy enforced by visible, trained security — widely considered one of the safest spaces to dance in the city.',
+    type: 'club',
     vibe: 'Queer nightclub',
     website: 'safaridiscoclub.com',
   },
@@ -100,7 +112,8 @@ const bars = [
     name: 'Believe Club',
     coords: [2.1626, 41.3894],
     address: 'Carrer de Balmes, 56',
-    description: 'The most famous drag queen club in the Gaixample. Nightly drag performances, live concerts, karaoke, and pole dancers — open almost every day of the week.',
+    description: 'The most visible drag venue in the neighborhood, open almost every night of the week. Crowd skews younger tourists and locals who want a high-energy show. Pole dancers, live singers, and karaoke — chaotic in the best way. Busy staff but generally safe inside.',
+    type: 'club',
     vibe: 'Drag nightclub',
     website: 'thebelieve.club',
   },
@@ -109,7 +122,8 @@ const bars = [
     name: 'Bacon Bear Bar',
     coords: [2.1591, 41.3853],
     address: 'Carrer de Casanova, 64',
-    description: 'The bear bar of the Gaixample — friendly, hairy, and unpretentious. Strong pours, happy hour until 10pm, and one of the best terraces in the neighborhood.',
+    description: 'The main gathering spot for the bear community in the Gaixample — stocky, hairy, and proudly unpretentious. Regulars are mostly men in their 30s–50s. Welcoming to anyone who walks in regardless of body type, no judgment at the door.',
+    type: 'bar',
     vibe: 'Bear bar',
     website: 'baconbearbar.com',
   },
@@ -118,11 +132,93 @@ const bars = [
     name: 'La Sastrería',
     coords: [2.1590, 41.3862],
     address: 'Carrer del Consell de Cent, 245',
-    description: 'A trendy local favorite known for its drag brunches — one of the most Instagram-worthy LGBTQ daytime experiences in the city. Lively drag shows weekly.',
+    description: 'Best known for its Saturday drag brunches, which pull a mixed crowd of friends groups, couples, and solo visitors comfortable in their own skin. Daytime means it reads more accessible than the late-night spots — lower stakes, easier for those newer to the scene.',
+    type: 'bar',
     vibe: 'Drag brunch bar',
     website: null,
   },
 ];
+
+const events = [
+  {
+    id: 'believe-nights',
+    name: 'Nightly Drag Shows',
+    tag: 'Every night',
+    venue: 'Believe Club',
+    description: 'Every night of the week — drag queens, pole performers, and karaoke hosted by rotating queens. The crowd is a mix of locals and visitors, skewing younger. Loud, theatrical, and unapologetically over-the-top. Security is visible and the door staff are generally switched on.',
+    price: 'Free entry',
+  },
+  {
+    id: 'strass-bingo',
+    name: 'Drag Bingo Sundays',
+    tag: 'Every Sunday',
+    venue: 'Strass Barcelona',
+    description: 'A Sunday ritual for neighborhood regulars. Drag hosts run the bingo with running commentary and crowd participation. The audience is mostly local men who\'ve been coming for years — a tighter, more community-feel than the tourist-facing shows. Get there early.',
+    price: 'Free entry',
+  },
+  {
+    id: 'sastreria-brunch',
+    name: 'Drag Brunch',
+    tag: 'Saturdays',
+    venue: 'La Sastrería',
+    description: 'A daytime event that draws a diverse crowd — mixed groups, couples, solo visitors, people of all ages. The drag performers work the floor rather than a stage, which makes it more intimate and lower-pressure than a night out. One of the more accessible entry points for people new to the scene.',
+    price: '€25',
+  },
+];
+
+const EventCard = ({ event, index }) => (
+  <motion.div
+    className="event-card"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.06, duration: 0.35 }}
+  >
+    <div className="event-card-top">
+      <div className="event-tag">{event.tag}</div>
+    </div>
+    <h3 className="event-name">{event.name}</h3>
+    <p className="event-venue">{event.venue}</p>
+    <p className="event-description">{event.description}</p>
+    <div className="event-card-bottom">
+      <span className="event-price">{event.price}</span>
+    </div>
+  </motion.div>
+);
+
+const EventsView = () => (
+  <motion.div
+    key="events"
+    className="panel-view events-panel"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{ duration: 0.3 }}
+  >
+    <div className="events-header">
+      <motion.h1
+        className="panel-title"
+        initial={{ opacity: 0, x: -16 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.1 }}
+      >
+        Events
+      </motion.h1>
+      <motion.p
+        className="panel-subtitle"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.18 }}
+      >
+        Barcelona LGBTQ+
+      </motion.p>
+    </div>
+    <div className="events-list">
+      {events.map((event, i) => (
+        <EventCard key={event.id} event={event} index={i} />
+      ))}
+    </div>
+  </motion.div>
+);
 
 const tabs = [
   {
@@ -192,13 +288,91 @@ const TabBar = ({ activeTab, onTabChange }) => (
   </div>
 );
 
+const SAVED_BARS = [
+  bars.find(b => b.id === 'safari-disco-club'),
+  bars.find(b => b.id === 'candy-darling'),
+  bars.find(b => b.id === 'la-federica'),
+];
+
+const ProfileView = () => (
+  <motion.div
+    key="profile"
+    className="panel-view profile-panel"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {/* Avatar + name */}
+    <motion.div
+      className="profile-header"
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.05 }}
+    >
+      <div className="profile-avatar">A</div>
+      <h1 className="profile-name">Alex</h1>
+      <p className="profile-location">Barcelona, Spain</p>
+    </motion.div>
+
+    {/* Stats row */}
+    <motion.div
+      className="profile-stats"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.12 }}
+    >
+      {[{ label: 'Visited', value: '7' }, { label: 'Saved', value: '3' }, { label: 'Reviews', value: '4' }].map(s => (
+        <div key={s.label} className="profile-stat">
+          <span className="profile-stat-value">{s.value}</span>
+          <span className="profile-stat-label">{s.label}</span>
+        </div>
+      ))}
+    </motion.div>
+
+    {/* Saved places */}
+    <motion.div
+      className="profile-section"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.18 }}
+    >
+      <h2 className="profile-section-title">Saved</h2>
+      <div className="profile-saved-list">
+        {SAVED_BARS.map((bar, i) => (
+          <motion.div
+            key={bar.id}
+            className="profile-saved-item"
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.22 + i * 0.06 }}
+          >
+            <div className="profile-saved-badge">{bar.name.charAt(0)}</div>
+            <div>
+              <p className="profile-saved-name">{bar.name}</p>
+              <p className="profile-saved-vibe">{bar.vibe}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
+  </motion.div>
+);
+
 const Map = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const markersRef = useRef([]);
+  const markerEls = useRef({});
   const [selectedBar, setSelectedBar] = useState(null);
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 });
   const [activeTab, setActiveTab] = useState('map');
+
+  useEffect(() => {
+    Object.entries(markerEls.current).forEach(([id, el]) => {
+      el.classList.toggle('map-pin-inner--active', id === selectedBar?.id);
+    });
+  }, [selectedBar]);
 
   useEffect(() => {
     if (map.current) return;
@@ -217,7 +391,15 @@ const Map = () => {
           attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>'
         }
       },
-      layers: layers('protomaps', namedFlavor('light'), { lang: 'en' })
+      layers: layers('protomaps', namedFlavor('light'), { lang: 'en' }).filter(l => {
+        // Drop landuse fills we don't want — keep only parks, urban green, and rail
+        const drop = new Set([
+          'landuse_hospital', 'landuse_industrial', 'landuse_school',
+          'landuse_beach', 'landuse_zoo', 'landuse_aerodrome',
+          'landuse_runway', 'roads_runway', 'roads_taxiway',
+        ]);
+        return !drop.has(l.id);
+      })
     };
 
     try {
@@ -258,13 +440,16 @@ const Map = () => {
     bars.forEach((bar) => {
       const el = document.createElement('div');
       el.className = 'map-pin';
-      el.innerHTML = `
-        <svg width="36" height="44" viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 0C8.059 0 0 8.059 0 18c0 12.627 16.5 25.125 17.227 25.707a1.286 1.286 0 001.546 0C19.5 43.125 36 30.627 36 18 36 8.059 27.941 0 18 0z" fill="#1a1a1a"/>
-          <circle cx="18" cy="18" r="8" fill="white"/>
-          <circle cx="18" cy="18" r="4" fill="#1a1a1a"/>
-        </svg>
-      `;
+      const inner = document.createElement('div');
+      inner.className = `map-pin-inner map-pin--${bar.type}`;
+      const img = document.createElement('img');
+      img.src = bar.type === 'club' ? dancerEmoji : beerEmoji;
+      img.width = 28;
+      img.height = 28;
+      img.draggable = false;
+      inner.appendChild(img);
+      el.appendChild(inner);
+      markerEls.current[bar.id] = inner;
 
       el.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -308,36 +493,12 @@ const Map = () => {
 
       {/* Events view */}
       <AnimatePresence>
-        {activeTab === 'events' && (
-          <motion.div
-            key="events"
-            className="panel-view"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h1 className="panel-title">Events</h1>
-            <p className="panel-subtitle">Coming soon</p>
-          </motion.div>
-        )}
+        {activeTab === 'events' && <EventsView />}
       </AnimatePresence>
 
       {/* Profile view */}
       <AnimatePresence>
-        {activeTab === 'profile' && (
-          <motion.div
-            key="profile"
-            className="panel-view"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <h1 className="panel-title">Profile</h1>
-            <p className="panel-subtitle">Coming soon</p>
-          </motion.div>
-        )}
+        {activeTab === 'profile' && <ProfileView />}
       </AnimatePresence>
 
       {/* Bar card overlay — only on map tab */}
