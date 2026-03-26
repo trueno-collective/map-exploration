@@ -12,7 +12,6 @@ const bars = [
     name: 'Candy Darling',
     coords: [2.1630, 41.3851],
     address: 'Gran Via de les Corts Catalanes, 586',
-    description: 'Named after Andy Warhol\'s trans muse. The crowd skews younger, gender-diverse, and creative — this is where artists and performers come to be seen. Strict door policy but genuinely welcoming once inside; security takes harassment seriously.',
     type: 'bar',
     vibe: 'Queer bar & show venue',
     website: null,
@@ -22,7 +21,6 @@ const bars = [
     name: 'La Chapelle',
     coords: [2.1591, 41.3867],
     address: 'Carrer de Muntaner, 67',
-    description: 'A Gaixample institution that draws an older, mixed crowd — locals in their 30s and 40s who\'ve been coming for years. Relaxed energy, no attitude, and a terrace where everyone ends up eventually.',
     type: 'bar',
     vibe: 'Cocktail bar',
     website: null,
@@ -32,7 +30,6 @@ const bars = [
     name: 'Punto BCN',
     coords: [2.1592, 41.3867],
     address: 'Carrer de Muntaner, 63',
-    description: 'One of the oldest bars on the strip, with a crowd that\'s been coming since before it was trendy. Mostly men in their 30s and up. No door, no cover, no pretense — a safe and familiar place to start or end the night.',
     type: 'bar',
     vibe: 'Classic gay bar',
     website: 'grupoarena.com',
@@ -42,7 +39,6 @@ const bars = [
     name: 'Moeem Barcelona',
     coords: [2.1626, 41.3841],
     address: 'Carrer de Muntaner, 11',
-    description: 'The most recommended spot by both locals and first-timers visiting the neighborhood. Draws a broad mix — men, women, couples — which keeps the atmosphere grounded and easy. No cover charge, welcoming staff, and the kind of place you can stay all evening without feeling rushed.',
     type: 'bar',
     vibe: 'Gay bar',
     website: 'moeembarcelona.com',
@@ -52,7 +48,6 @@ const bars = [
     name: 'GinGin Gay Queer Bar',
     coords: [2.1606, 41.3876],
     address: 'Carrer d\'Aribau',
-    description: 'One of the newer spots in the neighborhood, pulling in a younger, queer-leaning crowd that doesn\'t fit neatly into the older bar categories. Genuinely no-attitude door and a mixed demographic that includes more women and non-binary people than most places nearby.',
     type: 'bar',
     vibe: 'Queer cocktail bar',
     website: 'gingingaybar.com',
@@ -62,7 +57,6 @@ const bars = [
     name: 'Priscilla Cafè',
     coords: [2.1610, 41.3877],
     address: 'Carrer del Consell de Cent',
-    description: 'One of the few spots open from morning, making it a natural meeting point for the neighborhood regulars. The daytime crowd is a mix of locals working on laptops and people lingering over coffee. Evening gets livelier — inclusive crowd, no pressure.',
     type: 'bar',
     vibe: 'Café bar',
     website: 'priscillacafe.com',
@@ -72,7 +66,6 @@ const bars = [
     name: 'La Carrà',
     coords: [2.1610, 41.3856],
     address: 'Carrer de Muntaner, 34',
-    description: 'A shrine to Raffaella Carrà with 70s memorabilia and mirror balls. Draws a loyal crowd of locals who know every word to the playlist. Unpretentious, warm, and the kind of bar where strangers end up talking.',
     type: 'bar',
     vibe: 'Retro gay bar',
     website: 'lacarrabcn.com',
@@ -82,7 +75,6 @@ const bars = [
     name: 'Strass Barcelona',
     coords: [2.1589, 41.3838],
     address: 'Carrer de Villarroel, 68',
-    description: 'A dedicated drag bar where the shows are the main event, not an afterthought. The crowd is mostly local men who come specifically for the performers — regulars who know the queens by name. One of the safer, more community-rooted spots in the area.',
     type: 'bar',
     vibe: 'Drag bar',
     website: null,
@@ -92,7 +84,6 @@ const bars = [
     name: 'La Federica',
     coords: [2.1668, 41.3745],
     address: 'Carrer de Salvà, 3',
-    description: 'Away from the tourist-heavy Gaixample, this is where the neighborhood locals come. Smaller and more intimate — the kind of crowd that actually talks to each other. Poble-sec has a strong queer resident community and this bar reflects that: relaxed, genuine, and safe.',
     type: 'bar',
     vibe: 'Queer cocktail bar',
     website: null,
@@ -102,7 +93,6 @@ const bars = [
     name: 'Safari Disco Club',
     coords: [2.1449, 41.3783],
     address: 'Carrer de Tarragona, 141',
-    description: 'The most explicitly political and community-minded nightclub on this list. Draws an intentionally diverse crowd across gender, age, and background. Strict anti-harassment policy enforced by visible, trained security — widely considered one of the safest spaces to dance in the city.',
     type: 'club',
     vibe: 'Queer nightclub',
     website: 'safaridiscoclub.com',
@@ -112,7 +102,6 @@ const bars = [
     name: 'Believe Club',
     coords: [2.1626, 41.3894],
     address: 'Carrer de Balmes, 56',
-    description: 'The most visible drag venue in the neighborhood, open almost every night of the week. Crowd skews younger tourists and locals who want a high-energy show. Pole dancers, live singers, and karaoke — chaotic in the best way. Busy staff but generally safe inside.',
     type: 'club',
     vibe: 'Drag nightclub',
     website: 'thebelieve.club',
@@ -122,7 +111,6 @@ const bars = [
     name: 'Bacon Bear Bar',
     coords: [2.1591, 41.3853],
     address: 'Carrer de Casanova, 64',
-    description: 'The main gathering spot for the bear community in the Gaixample — stocky, hairy, and proudly unpretentious. Regulars are mostly men in their 30s–50s. Welcoming to anyone who walks in regardless of body type, no judgment at the door.',
     type: 'bar',
     vibe: 'Bear bar',
     website: 'baconbearbar.com',
@@ -132,7 +120,6 @@ const bars = [
     name: 'La Sastrería',
     coords: [2.1590, 41.3862],
     address: 'Carrer del Consell de Cent, 245',
-    description: 'Best known for its Saturday drag brunches, which pull a mixed crowd of friends groups, couples, and solo visitors comfortable in their own skin. Daytime means it reads more accessible than the late-night spots — lower stakes, easier for those newer to the scene.',
     type: 'bar',
     vibe: 'Drag brunch bar',
     website: null,
@@ -145,7 +132,6 @@ const events = [
     name: 'Nightly Drag Shows',
     tag: 'Every night',
     venue: 'Believe Club',
-    description: 'Every night of the week — drag queens, pole performers, and karaoke hosted by rotating queens. The crowd is a mix of locals and visitors, skewing younger. Loud, theatrical, and unapologetically over-the-top. Security is visible and the door staff are generally switched on.',
     price: 'Free entry',
   },
   {
@@ -153,7 +139,6 @@ const events = [
     name: 'Drag Bingo Sundays',
     tag: 'Every Sunday',
     venue: 'Strass Barcelona',
-    description: 'A Sunday ritual for neighborhood regulars. Drag hosts run the bingo with running commentary and crowd participation. The audience is mostly local men who\'ve been coming for years — a tighter, more community-feel than the tourist-facing shows. Get there early.',
     price: 'Free entry',
   },
   {
@@ -161,7 +146,6 @@ const events = [
     name: 'Drag Brunch',
     tag: 'Saturdays',
     venue: 'La Sastrería',
-    description: 'A daytime event that draws a diverse crowd — mixed groups, couples, solo visitors, people of all ages. The drag performers work the floor rather than a stage, which makes it more intimate and lower-pressure than a night out. One of the more accessible entry points for people new to the scene.',
     price: '€25',
   },
 ];
@@ -178,7 +162,7 @@ const EventCard = ({ event, index }) => (
     </div>
     <h3 className="event-name">{event.name}</h3>
     <p className="event-venue">{event.venue}</p>
-    <p className="event-description">{event.description}</p>
+
     <div className="event-card-bottom">
       <span className="event-price">{event.price}</span>
     </div>
@@ -564,14 +548,6 @@ const Map = () => {
                 </button>
               </div>
 
-              <motion.p
-                className="bar-card-description"
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.35 }}
-              >
-                {selectedBar.description}
-              </motion.p>
 
               <motion.div
                 className="bar-card-details"
@@ -590,6 +566,22 @@ const Map = () => {
                   </div>
                 )}
               </motion.div>
+
+              <motion.a
+                className="bar-card-gmaps"
+                href="#"
+                onClick={e => e.preventDefault()}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.34, duration: 0.3 }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+                Open in Google Maps
+              </motion.a>
             </div>
           </motion.div>
         )}

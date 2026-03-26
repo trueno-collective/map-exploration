@@ -141,6 +141,25 @@ html, body, #root {
   color: #1a1a2e;
 }
 
+.bar-card-gmaps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.04);
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.bar-card-gmaps:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
 /* Tab bar */
 .tab-bar {
   position: absolute;
